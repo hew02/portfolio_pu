@@ -5,17 +5,23 @@ const dev = process.argv.includes('dev');
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  preprocess: vitePreprocess(),
+	preprocess: vitePreprocess(),
 
-  kit: {
-    adapter: adapter(),
-    paths: {
-      base: dev ? '' : '/portfolio_pu', // change for your project name
-    },
-    appDir: 'app'
-  }
+	kit: {
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: null
+		}),
+		paths: {
+			base: dev ? '' : '/portfolio_pu'
+		},
+		appDir: 'app',
+		prerender: { entries: ['*'] }
+	}
 };
 
 export default config;
+
 
 
