@@ -1,40 +1,83 @@
-<!-- <script>
-  import { base } from '$app/paths';
-</script> -->
+<script>
+	import { base } from '$app/paths';
+</script>
 
-<body>
-	<header>
-		<h1>Juan Diego Mora</h1>
-		<h2>Composition Portfolio</h2>
-	</header>
-	<main>
-		<div>
-			<iframe
-				width="560"
-				height="315"
-				src="https://www.youtube.com/embed/i9ZQBw6s90A?si=JZ2RC1t7n7-efHI9"
-				title="YouTube video player"
-				frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				referrerpolicy="strict-origin-when-cross-origin"
-				allowfullscreen>
-			</iframe>
-			<p>Title and some more info.</p>
-			<a href="https://drive.google.com/file/d/1Va2jMdLojAUctrXoQ_l2I5Z4Jho3K0oX/view?usp=sharing"
-				>Score Here</a>
-		</div>
+<header>
+	<h1>Juan Diego Mora</h1>
+	<h2>Composition Portfolio</h2>
+</header>
+<main>
+	<div class="video_container">
+		<iframe
+			class="video"
+			width="560"
+			height="315"
+			src="https://www.youtube.com/embed/i9ZQBw6s90A?si=JZ2RC1t7n7-efHI9"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			referrerpolicy="strict-origin-when-cross-origin"
+			allowfullscreen
+		>
+		</iframe>
+		<p class="description">
+			Title and some more info. <a
+				class="link"
+				href="https://drive.google.com/file/d/1Va2jMdLojAUctrXoQ_l2I5Z4Jho3K0oX/view?usp=sharing"
+				target="_blank">Score Here</a>
+		</p>
+	</div>
 
-		<div>
-			<p>this is another video inside a different div</p>
-		</div>
-	</main>
-	<footer>
-		<p>this is the footer</p>
-	</footer>
-</body>
+	<div>
+	</div>
+</main>
+<footer>
+</footer>
 
-<!-- <h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
--->
+<!-- TO DEPLOY ON GH PAGES USE = npm run deploy-->
 
-<!-- TO RUN USE = npm run deploy-->
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400..700&display=swap');
+
+	header {
+		font-family: 'Lora', serif;
+		font-weight: 500; /* value from 400 to 700 */
+		margin: 30px 0px 100px 30px;
+	}
+
+	h1 {
+		font-size: 60px;
+		padding: 0px;
+		margin: 0px;
+	}
+
+	h2 {
+		font-size: 30px;
+		padding: 0px;
+		margin: 0px;
+	}
+
+	.video {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16/9;
+		border: none;
+	}
+
+	.video_container {
+		margin: 10%;
+	}
+
+	.description {
+		text-align: center;
+		font-family: 'Lora', serif;
+		font-size: clamp(0.5rem, 1vw, 3rem); /* automatically resize with limits */
+		font-weight: 400;
+	}
+
+	.link {
+		font-family: 'Lora', serif;
+		font-size: clamp(0.5rem, 1vw, 3rem); 
+		font-weight: 400;
+	}
+</style>
