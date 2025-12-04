@@ -42,6 +42,13 @@
 		background-color: #121212;
 		margin: 0;
 		padding: 0;
+		overflow: auto;
+		scrollbar-width: none; /* Firefox */
+		-ms-overflow-style: none; /* IE 10 */
+	}
+
+	:gobal(body)::-webkit-scrollbar {
+		display: none; /* Chrome, Safari, Edge */
 	}
 
 	header {
